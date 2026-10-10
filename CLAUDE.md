@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repository is
 
-A Claude Code plugin marketplace (`.claude-plugin/marketplace.json`, name `zinzan-mods`) holding one mod, `context-budget/`. A mod is a plugin whose behavior lives in a function-hooks module (`hooks/hooks.json` points at `hooks/register.tsx`) that runs inside Claude Code, not as a shell hook. The mod API is early access: when in doubt, the engine's type declarations are the reference, not memory.
+A Claude Code plugin marketplace (`.claude-plugin/marketplace.json`, name `zinzan-mods`) holding one mod, `context-budget/`. A mod is a plugin whose behavior lives in a function-hooks module (`hooks/hooks.json` points at `hooks/register.tsx`) that runs inside Claude Code, not as a shell hook. Mods need Claude Code 2.1.287 or later in the terminal (2.1.286 in the Desktop app). The API can change between releases: the official docs (code.claude.com/docs/en/plugins/mods) describe early access in the past tense, while the type declarations shipped with 2.1.296 still say the surface may change without notice. When in doubt, the engine's type declarations are the reference, not memory.
 
 User-facing docs are `README.md` (English) and `README.zh-TW.md`. Keep them in sync.
 

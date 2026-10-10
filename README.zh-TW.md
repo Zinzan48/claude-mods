@@ -82,7 +82,11 @@ mod 會在本機 Claude Code 的 plugin store 留一份事件紀錄（最多 200
 
 ### 需求
 
-Claude Code 2.1.271 以上，這是 `/config` 開始支援下拉選項的版本；實測版本是 2.1.296。mod 用的是 early access 的 plugin API，版本之間可能改動，Claude Code 更新後有可能壞掉，要等這裡修好。
+終端機要 Claude Code 2.1.287 以上，Desktop app 的 Code 分頁要 2.1.286 以上，從這兩個版本起 mod 預設開啟。實測版本是 2.1.296。
+
+提示列只會出現在終端機和 Desktop app。VS Code 擴充套件的對話面板和 `claude -p` 不會畫出任何東西，但閒置攔截、子代理模型和 effort 下限照樣生效。
+
+Claude Code 隨附的 mod 型別宣告寫明 API 可能隨版本改動，所以 Claude Code 更新後這個 mod 有可能壞掉，要等這裡修好。
 
 ### 移除
 

@@ -82,7 +82,11 @@ The mod keeps an event log (the last 200 entries) and the time and size of each 
 
 ### Requirements
 
-Claude Code 2.1.271 or later, which is the first version with picker options in `/config`. The mod is tested on 2.1.296. Mods use an early-access plugin API that can change between releases, so a Claude Code update can break the mod before a fix lands here.
+Claude Code 2.1.287 or later in the terminal, or 2.1.286 or later in the Code tab of the Desktop app. Those are the versions where mods are on by default. The mod is tested on 2.1.296.
+
+The band above the prompt appears in the terminal and in the Desktop app. The VS Code extension's chat panel and `claude -p` draw nothing, but the idle check, the subagent models and the effort floor still apply there.
+
+Claude Code's own type declarations for mods say the API may change between releases, so a Claude Code update can break the mod before a fix lands here.
 
 ### Uninstall
 
