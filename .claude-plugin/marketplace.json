@@ -1,0 +1,15 @@
+{
+  "name": "zinzan-mods",
+  "owner": {
+    "name": "Zinzan",
+    "url": "https://github.com/Zinzan48"
+  },
+  "description": "Claude Code mods by Zinzan.",
+  "plugins": [
+    {
+      "name": "context-budget",
+      "source": "./context-budget",
+      "description": "Compact reminders as the context grows, a check before resuming a large session after the prompt cache expires, and per-type models with a minimum effort for subagents."
+    }
+  ]
+}

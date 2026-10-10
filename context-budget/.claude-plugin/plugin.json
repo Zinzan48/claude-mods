@@ -1,0 +1,110 @@
+{
+  "name": "context-budget",
+  "version": "0.2.0",
+  "description": "Compact reminders as the context grows, a check before resuming a large session after the prompt cache expires, and per-type models with a minimum effort for subagents.",
+  "author": {
+    "name": "Zinzan",
+    "url": "https://github.com/Zinzan48"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/Zinzan48/claude-mods",
+  "repository": "https://github.com/Zinzan48/claude-mods",
+  "keywords": [
+    "context",
+    "compact",
+    "prompt-cache",
+    "subagent",
+    "mod"
+  ],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "language": {
+      "type": "string",
+      "title": "Language",
+      "description": "Language of the mod's messages. auto follows the language setting in settings.json: Chinese gets zh-TW, anything else gets en.",
+      "default": "auto",
+      "options": [
+        "auto",
+        "en",
+        "zh-TW"
+      ]
+    },
+    "first_threshold": {
+      "type": "number",
+      "title": "First reminder (tokens)",
+      "description": "Context size that triggers the first compact reminder. On a 200k context window, set it below 200000.",
+      "default": 500000,
+      "min": 50000
+    },
+    "threshold_step": {
+      "type": "number",
+      "title": "Remind again every (tokens)",
+      "description": "After the first reminder, remind again each time the context grows by this many tokens.",
+      "default": 150000,
+      "min": 10000
+    },
+    "idle_minutes": {
+      "type": "number",
+      "title": "Idle check (minutes)",
+      "description": "Hold the first message sent after this many idle minutes, so you can compact before the expired prompt cache is written again.",
+      "default": 60,
+      "min": 1
+    },
+    "idle_min_tokens": {
+      "type": "number",
+      "title": "Idle check minimum (tokens)",
+      "description": "Skip the idle check when the context is smaller than this.",
+      "default": 200000,
+      "min": 0
+    },
+    "explore_model": {
+      "type": "string",
+      "title": "Explore subagent model",
+      "description": "Model for Explore subagents spawned without a model. inherit leaves Claude Code's choice alone.",
+      "default": "haiku",
+      "options": [
+        "inherit",
+        "haiku",
+        "sonnet",
+        "opus"
+      ]
+    },
+    "guide_model": {
+      "type": "string",
+      "title": "claude-code-guide subagent model",
+      "description": "Model for claude-code-guide subagents spawned without a model. inherit leaves Claude Code's choice alone.",
+      "default": "sonnet",
+      "options": [
+        "inherit",
+        "haiku",
+        "sonnet",
+        "opus"
+      ]
+    },
+    "plan_model": {
+      "type": "string",
+      "title": "Plan subagent model",
+      "description": "Model for Plan subagents spawned without a model. inherit leaves Claude Code's choice alone.",
+      "default": "opus",
+      "options": [
+        "inherit",
+        "haiku",
+        "sonnet",
+        "opus"
+      ]
+    },
+    "subagent_effort_floor": {
+      "type": "string",
+      "title": "Minimum subagent effort",
+      "description": "Subagents that would run below this effort level run at it instead. off turns the floor off.",
+      "default": "high",
+      "options": [
+        "off",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ]
+    }
+  }
+}
